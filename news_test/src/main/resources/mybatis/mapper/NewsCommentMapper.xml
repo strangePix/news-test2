@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pix.project.mapper.NewsCommentMapper">
+
+    <select id="selectByNewsid" resultType="NewsComment">
+        select * from news_comment where newsid=#{newsid};
+    </select>
+
+    <insert id="insertByNewsid">
+        insert into `news_comment` (newsid,content,author,createdate)
+        values (#{comment.newsid},#{comment.content},#{comment.author},#{comment.createdate});
+    </insert>
+
+    <delete id="deleteByNewsid">
+        delete from `news_comment` where newsid=#{newsid};
+    </delete>
+
+</mapper>
